@@ -1,0 +1,368 @@
+﻿
+
+
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.Master.cs" Inherits="Intern.MasterPage" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<meta content="IE=edge" http-equiv="X-UA-Compatible">
+
+	<title>POWERGRID</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+	
+	<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300,600'>
+
+	<link rel="Stylesheet" href="CSSFiles/w3.css" />
+	
+	<link rel="stylesheet" href="CSSFiles/jquery-ui.css"/>
+	
+	<link rel="Stylesheet" href="CSSFiles/redmond-jquery-ui.css" />  
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+    <script src="ScriptFiles/jquery-1.12.4.js"></script>
+    <script src="ScriptFiles/jquery-ui.js"></script>
+
+    <style>
+
+            body{
+                margin: 0;
+                padding: 0;
+
+                background-size: cover;
+                background-position: center;
+                font-family: sans-serif;
+            }
+
+            .loginbox {
+                width: 330px;
+                height: 400px;
+                background:	#0081c9;
+                color: #fff;
+                top: auto;
+                left: auto;
+                margin: 0 auto;
+                margin-top: 140px;
+                margin-bottom: 169px;
+                position: relative;
+                box-sizing: border-box;
+                padding: 70px 30px;
+            }
+
+            .avatar{
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                position: absolute;
+                top: -50px;
+                left: calc(50% - 50px);
+            }
+
+            h1{
+                margin: 0;
+                padding: 0 0 20px;
+                text-align: center;
+                font-size: 22px;
+            }
+
+            .loginbox p{
+                margin: 0;
+                padding: 0;
+                font-weight: bold;
+            }
+
+            .loginbox input{
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .loginbox input[type="text"], input[type="password"]
+            {
+                border: none;
+                border-bottom: 1px solid #fff;
+                background: transparent;
+                outline: none;
+                height: 40px;
+                color: #fff;
+                font-size: 16px;
+            }
+
+            .loginbox input[type="submit"]
+            {
+                border: none;
+                outline: none;
+                height: 40px;
+                background:#ed7700;
+                color: #fff;
+                font-size: 18px;
+                border-radius: 20px;
+            }
+            .loginbox input[type="submit"]:hover
+            {
+                cursor: pointer;
+                background: #ff8000;
+                color: #000;
+            }
+            .loginbox a{
+                text-decoration: none;
+                font-size: 12px;
+                line-height: 20px;
+                color: darkgrey;
+            }
+
+            .loginbox a:hover
+            {
+                color: #ffc107;
+            }
+
+            @-webkit-keyframes autofill {
+                to {
+                    color: #000;
+                    background: transparent;
+                }
+            }
+
+            input:-webkit-autofill {
+                -webkit-animation-name: autofill;
+                -webkit-animation-fill-mode: both;
+            }
+
+            .errorMsg {
+                margin: 0;
+                padding: 0 0 20px;
+                text-align: center;
+
+                color: #000;
+            }
+
+
+            #navbar {
+                overflow: hidden;
+                background-color:	#0081c9;
+                padding:30px;
+            }
+
+            .navbar {
+                background-color:	#0081c9;
+                overflow: hidden;
+                
+                bottom: 0;
+                width: 100%;
+            }
+
+            .navbar2 {
+                background-color:	#0081c9;
+                overflow: hidden;
+                width: 100%;
+            }
+
+            .navbar2 a {
+                float: left;
+                display: block;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px;
+            }
+
+            .navbarT {
+                background-color:	#0081c9;
+                overflow: hidden;
+                
+                bottom: 0;
+                width: 100%;
+            }
+
+
+            .navbar a {
+                float: right;
+                display: block;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px;
+            }
+
+                .navbar h2 {
+                    
+                    display: block;
+                    color: #f2f2f2;
+                    text-align: center;
+                    padding: 10px 12px;
+                    text-decoration: none;
+                    font-size: 17px;
+                }
+
+                .navbar2 h2 {
+                    
+                    display: block;
+                    color: #f2f2f2;
+                    text-align: center;
+                    
+                    text-decoration: none;
+                    font-size: 25px;
+                }
+
+            .navbar a:hover {
+                background-color: #A8CACB;
+                color: black;
+            }
+
+
+            .navbar a.active {
+                background-color:	#0081c9;
+                color: white;
+            }
+
+
+
+
+            .modal {
+                display: none; /* Hidden by default */
+                position: fixed; /* Stay in place */
+                z-index: 1; /* Sit on top */
+                padding-top: 100px; /* Location of the box */
+                left: 0;
+                top: 0;
+                width: 100%; /* Full width */
+                height: 100%; /* Full height */
+                overflow: auto; /* Enable scroll if needed */
+                background-color: rgb(0,0,0); /* Fallback color */
+                background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+                
+            }
+
+            /* Modal Content */
+            .modal-content {
+                background-color: #fefefe;
+                margin: auto;
+                padding: 20px 20px 20px 20px;
+                border: 3px solid rgb(16, 154, 245);
+                width: 60%;
+                border-radius: 6px;
+            }
+
+            /* The Close Button */
+            .close {
+                color: #aaaaaa;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+            }
+
+            .close:hover,
+            .close:focus {
+                color: #000;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+                                
+            .info {
+            background-color: #e7f3fe;
+            border-left: 6px solid #2196F3;
+            }
+
+            div.ex3 {
+				width: 100%;
+				height: 700px;
+				overflow: auto;
+			}
+			
+			h2 {
+				text-align: center;
+				
+				color: #003399;
+				font-size:35px;
+			}
+		
+			.button {
+				display: inline-block;
+				padding: 15px 25px;
+				font-size: 24px;
+				cursor: pointer;
+				text-align: center;
+				text-decoration: none;
+				outline: none;
+				color: #fff;
+				background-color: #0094ff;
+				border: none;
+				border-radius: 15px;
+				box-shadow: 0 9px #999;
+			}
+		
+			.button:hover {background-color: #0369b3}
+		
+			.button:active {
+				background-color: #0369b3;
+				box-shadow: 0 5px #666;
+				transform: translateY(4px);
+			}
+
+			
+			ul 
+			{
+				background:#7aa9f5;
+				padding: 20px;
+				margin: 20px;
+			}
+					
+			ul.b {list-style-type: square;}
+					
+			ul li 
+			{
+				background:  #e7f3fe;
+				margin: 10px;
+				text-align: center;
+				font-size: 20px;
+			}
+
+			.Star
+			{
+				background-image: url(Data/zz.png);
+				height: 32px;
+				width: 32px;
+			
+
+			}
+			.WaitingStar
+			{
+				background-image: url(Data/zz3.png);
+				height: 32px;
+				width: 32px;
+			}
+			.FilledStar
+			{
+				background-image: url(Data/zz2.png);
+				height: 32px;
+				width: 32px;
+			}
+
+    </style>
+
+    <div class="content"><asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">       
+	</asp:ContentPlaceHolder></div> 
+    
+</head>
+
+<body>
+<form id="form2" runat="server">
+    
+    <img src="../images/header.svg" width="100%">
+    <div class="navbar2"><h2 float="center">Internship with POWERGRID</h2></div>      	              
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        
+	<div class="content"><asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">       
+	</asp:ContentPlaceHolder></div>   	
+       
+</form>
+</body>
+</html>
+
+
